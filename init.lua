@@ -1,3 +1,5 @@
+-- If you experience any errors while trying to install kickstart, run `:checkhealth` for more info.
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -153,6 +155,17 @@ require('lazy').setup({
     'seblyng/roslyn.nvim',
     ft = 'cs',
     opts = {},
+  },
+  {
+    'stevearc/oil.nvim',
+    ---@module 'oil'
+    ---@type oil.SetupOpts
+    opts = {},
+    -- Optional dependencies
+    dependencies = { { 'echasnovski/mini.icons', opts = {} } },
+    -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
+    -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
+    lazy = false,
   },
   {
     'MeanderingProgrammer/render-markdown.nvim',
